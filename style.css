@@ -6,10 +6,38 @@
 }
 
 .hero {
-  color: var(--primary-color);
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem 5%;
   background: linear-gradient(to top, #734ba6dd, #5494e000),
     linear-gradient(to top, #9668d2dd, #f9b5ff);
   background-size: auto, auto, auto;
+  box-sizing: border-box;
+}
+
+.hero-elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero-content {
+  padding: 2.5rem;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 308px;
+  min-width: 308px;
+}
+
+.hero-image {
+  padding: 1rem;
+}
+
+.hero img {
+  width: 100%;
 }
 
 .name {
@@ -24,6 +52,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter";
+  color: var(--primary-color);
 }
 
 h2 {
@@ -31,14 +60,14 @@ h2 {
 }
 
 header {
-  padding: 1rem;
-  background-color: #e2c5ff00;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav {
+  font-size: large;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -47,9 +76,9 @@ header {
 }
 
 .contact-btn {
-  padding: 12px 25px;
+  padding: 12px 32px;
   border: 2px solid #483d8b;
-  border-radius: 24px;
+  border-radius: 32px;
   background-color: transparent;
   color: #483d8b;
 }
@@ -64,7 +93,6 @@ header {
 
 .contact-btn:hover {
   color: #483d8b;
-  transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   border-color: #483d8b;
 }
@@ -73,6 +101,32 @@ header {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
-.hero img {
-  height: 400px;
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 24px;
+  color: #000;
+  background-color: #f9b5ff8c;
+  transition: all 0.2s ease-in-out;
+}
+
+.fa:hover {
+  background-color: #f8b4ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  background-color: #242734;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #f1e9df;
+}
+
+.container img {
+  width: 300px;
 }
