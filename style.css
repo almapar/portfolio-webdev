@@ -118,13 +118,15 @@ header {
 }
 
 .container {
-  background-color: #242734;
+  background-color: #fffbf6;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: #f1e9df;
+  color: #242734;
+  height: 10rem;
 }
 
 .container img {
-  width: 300px;
+  width: 500px;
+  height: 115px;
 }
