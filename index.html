@@ -21,13 +21,13 @@
         </li>
       </ul>
     </header>
-  
+
     <button class="hamburger" onclick="show()">
       <div id="bar1" class="bar"></div>
       <div id="bar2" class="bar"></div>
       <div id="bar3" class="bar"></div>
     </button>
-  
+
     <div class="navigation">
       <ul class="burger-nav">
         <li>
@@ -41,7 +41,6 @@
         </li>
       </ul>
     </div>
-    </header>
     <div class="hero">
       <div class="hero-elements">
         <div class="hero-content">
@@ -140,8 +139,14 @@
       </div>
     </div>
     <script>
+      /*
+        This function toggles the mobile menu.
+        It's called by the 'onclick' event on the hamburger button.
+      */
       function show() {
+        // Toggles the 'open' class on the button itself (to animate the X)
         document.querySelector(".hamburger").classList.toggle("open");
+        // Toggles the 'active' class on the navigation div (to slide it in)
         document.querySelector(".navigation").classList.toggle("active");
       }
     </script>

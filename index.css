@@ -1,50 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap");
+/* --- TABLE OF CONTENTS ---
+1.  Font Imports
+2.  Root Variables
+3.  Global & Body Styles
+4.  Hero Section
+5.  Header & Desktop Navigation
+6.  Social Media Links
+7.  Mobile & Responsive Styles (Media Query)
+*/
 
+/* --- 1. Font Imports --- */
+/* Pulls in the custom fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+/* --- 2. Root Variables --- */
+/* Defines a CSS variable for the primary color, making it easy to change later */
 :root {
   --primary-color: rgb(0, 0, 0);
 }
 
+/* --- 3. Global & Body Styles --- */
 html {
+  /* Fixes height to 100% of the screen's vertical height */
   height: 100svh;
-
+  /* Prevents horizontal scrolling */
   overflow: hidden;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  /* Sets the default font for the whole page */
+  font-family: "Inter";
+  color: var(--primary-color);
+  /* The multi-layered gradient background */
+  background: linear-gradient(to top, #734ba6dd, #5494e000),
+    linear-gradient(to top, #9668d2dd, #f9b5ff);
+  background-size: auto, auto, auto;
+  height: 100%;
+  /* This is key: enables flex-grow: 1 on .hero to work */
+  display: flex;
+  flex-direction: column;
+}
+
+/* A simple reset for the h2 margin */
+h2 {
+  margin: 0;
+}
+
+/* --- 4. Hero Section --- */
 .hero {
   gap: 2rem;
-
   padding: 2rem 5%;
-
   display: grid;
-
   height: auto;
-
+  /* Centers the .hero-elements grid item */
   place-items: center;
-
+  /* This makes the hero section fill all available space *after* the header */
   flex-grow: 1;
-
   min-height: 0;
 }
 
 .hero-elements {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
 .hero-content {
   padding: 2.5rem;
-
   justify-content: space-evenly;
-
   width: 100%;
-
+  /* These widths ensure the content box doesn't get too big or too small */
   max-width: 308px;
-
   min-width: 308px;
 }
 
@@ -53,132 +81,90 @@ html {
 }
 
 .hero img {
+  /* Makes the image responsive to its container's width */
   width: 100%;
 }
 
+/* --- 5. Header & Desktop Navigation --- */
 .name {
+  /* Applies the pixel-style font */
   font-family: "Bitcount Grid Single";
-
   font-size: 32px;
-
   font-weight: 400;
-
   text-decoration: none;
-
+  /* Prevents the name from shrinking if the nav links get too long */
   flex-shrink: 0;
 }
 
-body {
-  margin: 0;
-
-  padding: 0;
-
-  font-family: "Inter";
-
-  color: var(--primary-color);
-
-  background: linear-gradient(to top, #734ba6dd, #5494e000),
-    linear-gradient(to top, #9668d2dd, #f9b5ff);
-
-  background-size: auto, auto, auto;
-
-  height: 100%;
-
-  display: flex;
-
-  flex-direction: column;
-}
-
-h2 {
-  margin: 0;
-}
-
 header {
+  /* Makes the header 'stick' to the top of the viewport when scrolling */
   position: sticky;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   padding: 1.5rem;
 }
 
 .nav {
   font-size: large;
-
   display: flex;
-
   align-items: center;
-
   gap: 0.5rem;
-
   list-style: none;
-
   color: var(--primary-color);
 }
 
+/* The "Contact" button style */
 .contact-btn {
   padding: 12px 32px;
-
   border: 2px solid #483d8b;
-
   border-radius: 32px;
-
   background-color: transparent;
 }
 
 .nav a {
   text-decoration: none;
-
   color: var(--primary-color);
-
   padding: 12px 25px;
-
   border-radius: 24px;
-
+  /* Smooths the hover effect */
   transition: all 0.2s ease-in-out;
 }
 
+/* Hover effects for the contact button */
 .contact-btn:hover {
   color: #000;
-
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Hover effect for the regular nav links */
 .nav a:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
+/* --- 6. Social Media Links --- */
 .socials a {
-  display: inline-block;
-
+  display: inline-block; /* Allows padding and alignment */
   padding: 1rem;
-
-  font-size: 2px;
-
+  font-size: 2px; /* Hides any accidental text */
   text-align: center;
-
   text-decoration: none;
-
   border-radius: 24px;
-
-  color: #000;
-
+  color: #000; /* This colors the SVG icon inside */
   background-color: #f9b5ff8c;
-
   transition: all 0.2s ease-in-out;
 }
 
 .socials a:hover {
   background-color: #f8b4ff;
-
+  /* Lifts the button slightly on hover */
   transform: translateY(-2px);
-
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* --- 7. Mobile & Responsive Styles (Media Query) --- */
+
+/* These styles are hidden by default and only apply on small screens */
 .hamburger {
   display: none;
 }
@@ -187,97 +173,79 @@ header {
   display: none;
 }
 
+/* This is the breakpoint. When the screen is 700px wide or less... */
 @media (max-width: 700px) {
+  /* Stack the hero content vertically */
   .hero-elements {
     flex-direction: column;
   }
 
+  /* Hide the desktop nav... */
   .nav {
     display: none;
   }
 
+  /* ...and show the mobile nav structure */
   .burger-nav {
     display: block;
-
     padding-top: 80px;
   }
 
+  /* The slide-out menu container */
   .navigation {
     position: fixed;
-
+    /* Start off-screen to the right */
     right: -500px;
-
     top: 0;
-
     width: 350px;
-
     height: 100%;
-
     background-color: #f8b4ff;
-
     transition: 0.5s;
-
+    /* Ensures menu is on top of all other content */
     z-index: 1000;
   }
 
   .burger-nav li {
     color: #000;
-
     text-align: right;
-
     text-transform: uppercase;
-
     list-style-type: none;
-
     font-size: 1.5em;
-
     padding: 20px 30px;
-
     border-bottom: 1pt solid #252525;
   }
 
   .burger-nav li a {
     text-decoration: none;
-
     color: inherit;
-
     display: block;
   }
 
   .hamburger,
   .bar {
+    /* 'fixed' positions them relative to the viewport, not the page */
     position: fixed;
   }
 
+  /* Show the hamburger button */
   .hamburger {
     display: block;
-
     top: 5%;
-
     left: 85%;
-
     width: 30px;
-
     height: 30px;
-
     transform: translateY(-50%);
-
     border: 0;
-
     background: 0 0;
-
+    /* Sits on top of the mobile menu (z-index 1000) */
     z-index: 1001;
   }
 
   .bar {
     top: 3px;
-
     background: #000;
-
     width: 100%;
-
     height: 4px;
-
     transition: all 0.5s ease-in;
   }
 
@@ -289,13 +257,15 @@ header {
     top: 19px;
   }
 
+  /* This class is toggled by JavaScript */
+  /* This rule makes the menu slide into view */
   .navigation.active {
     right: 0;
   }
 
+  /* These rules animate the hamburger into an 'X' */
   .hamburger.open #bar1 {
     background-color: #000;
-
     transform: rotate(45deg) translate(6px, 5px);
   }
 
@@ -305,7 +275,6 @@ header {
 
   .hamburger.open #bar3 {
     background-color: #000;
-
     transform: rotate(-45deg) translate(6px, -5px);
   }
 }
