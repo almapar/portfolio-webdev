@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="hero">
-      <header>
-        <h2 class="name">alexandra</h2>
+    <header>
+      <h2 class="name">alexandra</h2>
+      <div class="navigation">
+        <button class="hamburger" onclick="show()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </button>
         <ul class="nav">
           <li>
             <a href="/about.html">about</a>
@@ -21,7 +26,9 @@
             <a href="/contact.html" class="contact-btn">contact</a>
           </li>
         </ul>
-      </header>
+      </div>
+    </header>
+    <div class="hero">
       <div class="hero-elements">
         <div class="hero-content">
           <h1 class="greeting">👋, i'm alex</h1>
@@ -118,15 +125,11 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <img src="/img/purple-wave-transparent.png" alt="Elegant design image" />
-      <div class="container-text">
-        <h2>elegance and creativity at your fingertips</h2>
-        <p>
-          creative block? consider it popped. welcome to elegant, bubbly, crisp
-          originality.
-        </p>
-      </div>
-    </div>
+    <script>
+      function show() {
+        document.querySelector(".hamburger").classList.toggle("open");
+        document.querySelector(".navigation").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
