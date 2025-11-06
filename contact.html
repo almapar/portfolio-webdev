@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
-    <link rel="stylesheet" href="/contact.css" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact.css" />
   </head>
   <body>
     <header>
@@ -41,5 +41,75 @@
         </li>
       </ul>
     </div>
+
+    <main class="main-content">
+      <div class="form-container">
+        <h1>Get In Touch</h1>
+        <p>
+          Have a question or want to work together? Fill out the form below.
+        </p>
+
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-form"
+        >
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Title of Query</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="e.g., Project Inquiry"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Brief Description</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Hello, I'd like to discuss..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      function show() {
+        document.querySelector(".hamburger").classList.toggle("open");
+        document.querySelector(".navigation").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
