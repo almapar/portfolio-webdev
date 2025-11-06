@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
@@ -7,30 +8,43 @@
 
 html {
   height: 100svh;
+
   overflow: hidden;
 }
 
 .hero {
   gap: 2rem;
+
   padding: 2rem 5%;
+
   display: grid;
+
   height: auto;
+
   place-items: center;
+
   flex-grow: 1;
+
   min-height: 0;
 }
 
 .hero-elements {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
 .hero-content {
   padding: 2.5rem;
+
   justify-content: space-evenly;
+
   width: 100%;
+
   max-width: 308px;
+
   min-width: 308px;
 }
 
@@ -44,22 +58,34 @@ html {
 
 .name {
   font-family: "Bitcount Grid Single";
+
   font-size: 32px;
+
   font-weight: 400;
+
   text-decoration: none;
+
   flex-shrink: 0;
 }
 
 body {
   margin: 0;
+
   padding: 0;
+
   font-family: "Inter";
+
   color: var(--primary-color);
+
   background: linear-gradient(to top, #734ba6dd, #5494e000),
     linear-gradient(to top, #9668d2dd, #f9b5ff);
+
   background-size: auto, auto, auto;
+
   height: 100%;
+
   display: flex;
+
   flex-direction: column;
 }
 
@@ -69,38 +95,55 @@ h2 {
 
 header {
   position: sticky;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   padding: 1.5rem;
 }
 
 .nav {
   font-size: large;
+
   display: flex;
+
   align-items: center;
+
   gap: 0.5rem;
+
   list-style: none;
+
   color: var(--primary-color);
 }
 
 .contact-btn {
   padding: 12px 32px;
+
   border: 2px solid #483d8b;
+
   border-radius: 32px;
+
   background-color: transparent;
 }
 
 .nav a {
   text-decoration: none;
+
   color: var(--primary-color);
+
   padding: 12px 25px;
+
   border-radius: 24px;
+
   transition: all 0.2s ease-in-out;
 }
 
 .contact-btn:hover {
   color: #000;
+
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -110,23 +153,37 @@ header {
 
 .socials a {
   display: inline-block;
+
   padding: 1rem;
+
   font-size: 2px;
+
   text-align: center;
+
   text-decoration: none;
+
   border-radius: 24px;
+
   color: #000;
+
   background-color: #f9b5ff8c;
+
   transition: all 0.2s ease-in-out;
 }
 
 .socials a:hover {
   background-color: #f8b4ff;
+
   transform: translateY(-2px);
+
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger {
+  display: none;
+}
+
+.burger-nav {
   display: none;
 }
 
@@ -139,25 +196,52 @@ header {
     display: none;
   }
 
+  .burger-nav {
+    display: block;
+
+    padding-top: 80px;
+  }
+
   .navigation {
     position: fixed;
+
     right: -500px;
+
     top: 0;
+
     width: 350px;
+
     height: 100%;
+
     background-color: #f8b4ff;
+
     transition: 0.5s;
+
     z-index: 1000;
   }
 
-  .navigation ul li {
+  .burger-nav li {
     color: #000;
+
     text-align: right;
+
     text-transform: uppercase;
+
     list-style-type: none;
+
     font-size: 1.5em;
+
     padding: 20px 30px;
+
     border-bottom: 1pt solid #252525;
+  }
+
+  .burger-nav li a {
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
   }
 
   .hamburger,
@@ -167,21 +251,33 @@ header {
 
   .hamburger {
     display: block;
+
     top: 5%;
+
     left: 85%;
+
     width: 30px;
+
     height: 30px;
+
     transform: translateY(-50%);
+
     border: 0;
+
     background: 0 0;
+
     z-index: 1001;
   }
 
   .bar {
     top: 3px;
+
     background: #000;
+
     width: 100%;
+
     height: 4px;
+
     transition: all 0.5s ease-in;
   }
 
@@ -199,6 +295,7 @@ header {
 
   .hamburger.open #bar1 {
     background-color: #000;
+
     transform: rotate(45deg) translate(6px, 5px);
   }
 
@@ -208,6 +305,7 @@ header {
 
   .hamburger.open #bar3 {
     background-color: #000;
+
     transform: rotate(-45deg) translate(6px, -5px);
   }
 }
